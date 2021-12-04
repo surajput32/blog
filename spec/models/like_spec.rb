@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe Like, type: :model do
   # associations
   it { should belong_to(:user) }
-  it { should have_many(:likes) }
+  it { should belong_to(:likeable) }
 end
