@@ -19,6 +19,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /show' do
     it 'renders a successful response' do
       post = create(:post)
+      create_list(:comment, 2, post: post)
       get api_v1_post_url(post), headers: valid_headers, as: :json
 
       expect(response).to be_successful

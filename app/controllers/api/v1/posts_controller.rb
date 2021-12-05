@@ -5,7 +5,9 @@ module Api
 
       # GET /posts/1
       def show
-        render json: @post
+        options = {}
+        options[:include] = [:comments]
+        render json: PostSerializer.new(@post, options).serializable_hash.to_json
       end
 
       # POST /posts
