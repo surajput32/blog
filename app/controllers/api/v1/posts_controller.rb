@@ -20,15 +20,14 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_post
-          @post = Post.find(params[:id])
-        end
 
-        # Only allow a list of trusted parameters through.
-        def post_params
-          params.require(:post).permit(:name, :title, :content)
-        end
+      def set_post
+        @post = Post.find(params[:id])
+      end
+
+      def post_params
+        params.require(:post).permit(:name, :title, :content)
+      end
     end
   end
 end

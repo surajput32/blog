@@ -4,7 +4,9 @@ Rails.application.routes.draw do
       # authentication
       post 'authenticate', to: 'authentication#create'
 
-      resources :posts, only: %i[show create]
+      resources :posts, only: %i[show create] do
+        resources :comments, only: :create
+      end
     end
   end
 end
