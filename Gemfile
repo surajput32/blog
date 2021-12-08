@@ -15,11 +15,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 5.0.0'
-  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'simplecov', require: false
 end
